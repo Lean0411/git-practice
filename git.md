@@ -99,11 +99,32 @@
     - **tag:** 是一個容器，通常用來關聯特定一個 commit 物件，使用 tag 物件最常見的情況是替特定一個版本的 commit 物件標示一個易懂的名稱，可能是代表某個特定發行的版本
     - **branch:** 代表一個開發的分支，有可能是一個「功能」，指向 commit 的位置
     - **head:** Head 指向當前分支的最新提交（也不一定是最新，就是目前所在的位置）
+        ```bash
+        #查看目前的HEAD檔案
+        lean@MacBook-Pro14 .git % cat HEAD 
+        ref: refs/heads/main
 
+        #新增一個branch
+        lean@MacBook-Pro14 .git % git branch feature
+        lean@MacBook-Pro14 .git % cat HEAD          
+        ref: refs/heads/main    #但是還沒有變！
 
-    - 這是在建立 Github repo 時和 Local 連結完之後的 `.git/config` 資訊
+        #需要切換到“feature”的branch，HEAD才會指向當前的位置
+        lean@MacBook-Pro14 git-demo % git switch feature
+        Switched to branch 'feature'
+
+        #檢查現在的branch及HEAD檔
+        lean@MacBook-Pro14 git-demo % git branch 
+        * feature
+        main
+        lean@MacBook-Pro14 git-demo % cd .git 
+        lean@MacBook-Pro14 .git % cat HEAD 
+        ref: refs/heads/feature
+        ```
+
     
         ```bash
+        #這是在建立 Github repo 時和 Local 連結完之後的 `.git/config` 資訊
         lean@MacBook-Pro14 .git % cat config 
         [core]
                 repositoryformatversion = 0
