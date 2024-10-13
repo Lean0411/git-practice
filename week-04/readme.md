@@ -156,6 +156,19 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 sudo tail -f /var/log/nginx/access.log
 sudo tail -f /var/log/nginx/error.log
 ```
+
+# Linux 檔案目錄結構
+
+- **/etc** 是 “Editable Text Configuration” 的縮寫，也就是可編輯的文本配置的縮寫。這裡通常會放系統大部分的配置檔案，這些檔案都是純文字檔。
+  
+- **/var** 表示 “variable”，表示存放的資料是經常變動的。這裡通常放系統經常更新的檔案，像是 `/var/log`。
+
+- **/boot** 目錄存放的是系統啟動時需要的檔案，例如作業系統啟動時的映像檔。
+
+- **$PATH 環境變數** 的作用是決定系統在執行指令時，會去哪些目錄搜尋可執行檔。
+
+- **`which` 指令** 的作用是當安裝了多個版本的同一個程式時，`which` 可以幫助確認當前執行的版本來自哪一個路徑。例如，當系統有多個版本的 Python 時，使用 `which python` 可以幫助確認系統正在執行的 Python 可執行檔來自哪個目錄。
+
 ## 參考資料：
 
 - [PressPlay - Nginx 教學](https://www.pressplay.cc/project/F720CEB1D6057D7ABB5614722AB18FFF/articles/660A57208C29FF94453548ED21F284EF)
