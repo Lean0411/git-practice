@@ -1,6 +1,3 @@
-
-ssh -i ~/.ssh/AWS_key.pem ubuntu@13.115.69.248
-
 ### 剛連上初始化：
 
 ![init](pic/1.png)
